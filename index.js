@@ -1,3 +1,4 @@
+import TOKEN from "./secret";
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
@@ -7,10 +8,10 @@ const noReactMessage = { content: "No one reacted" };
 let messages = new Map();
 
 client.once("ready", () => {
-  console.log("Ready!");
+  console.log("Notify reactions is up and running");
 });
 
-client.login("NzEzMDgyMDY5NzM0OTE2MTM2.XsbBLg.elp3OJ8pKgTUR92umUWTJ0NeN_0");
+client.login(TOKEN);
 
 client.on("message", (message) => {
   if (message.content.includes("@") && !message.mentions.users.size) {
