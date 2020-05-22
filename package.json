@@ -1,0 +1,24 @@
+{
+  "name": "discord-reactions-bot",
+  "version": "1.0.0",
+  "description": "Discord bot that can mention people who reacted to a message",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yaodi/discord-notify-reactions.git"
+  },
+  "author": "Yaodi Hu Jr.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yaodi/discord-notify-reactions/issues"
+  },
+  "homepage": "https://github.com/Yaodi/discord-notify-reactions#readme",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "dotenv": "^8.2.0"
+  }
+}

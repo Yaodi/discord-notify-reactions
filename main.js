@@ -1,4 +1,4 @@
-import TOKEN from "./secret";
+require("dotenv").config();
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
@@ -10,8 +10,7 @@ let messages = new Map();
 client.once("ready", () => {
   console.log("Notify reactions is up and running");
 });
-
-client.login(TOKEN);
+client.login(process.env.TOKEN);
 
 client.on("message", (message) => {
   if (message.content.includes("@") && !message.mentions.users.size) {
