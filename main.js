@@ -2,7 +2,7 @@ require("dotenv").config();
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
-const errorMessage = { content: "No message to ping" };
+const errorMessage = { content: "No message to ring" };
 const noReactMessage = { content: "No one reacted" };
 
 let messages = new Map();
@@ -15,10 +15,10 @@ client.login(process.env.TOKEN);
 client.on("message", (message) => {
   if (message.content.includes("@") && !message.mentions.users.size) {
     messages.set(message.author.id, message);
-  } else if (message.content.includes("!ping <@")) {
+  } else if (message.content.includes("!ring <@")) {
     let userID = message.mentions.users.keys().next().value;
     message.channel.send(pingReactors(userID));
-  } else if (message.content.includes("!ping")) {
+  } else if (message.content.includes("!ring")) {
     message.channel.send(pingReactors(message.author.id));
   }
 });
