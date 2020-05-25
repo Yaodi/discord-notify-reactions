@@ -33,7 +33,7 @@ function pingReactors(userID) {
         usersReacted.set(key, value);
       });
     });
-    let botMessage = "```" + pingedMessage.content + "```\n";
+    let botMessage = "> " + pingedMessage.content + "\n";
     usersReacted.forEach((user) => {
       botMessage += ` <@${user.id}>`;
     });

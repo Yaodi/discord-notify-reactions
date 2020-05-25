@@ -4,7 +4,7 @@
   "description": "Discord bot that can mention people who reacted to a message",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "nodemon main.js",
     "start": "node main.js"
   },
   "repository": {
@@ -20,5 +20,8 @@
   "dependencies": {
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
