@@ -13,7 +13,7 @@ client.once("ready", () => {
 client.login(process.env.TOKEN);
 
 client.on("message", (message) => {
-  if (message.content.includes("@") && !message.mentions.users.size) {
+  if (message.mentions.users.size < countAts(message.content)) {
     messages.set(message.author.id, message);
   } else if (message.content.includes("!clock in <@")) {
     let userID = message.mentions.users.keys().next().value;
@@ -40,4 +40,12 @@ function pingReactors(userID) {
     return usersReacted.size ? botMessage : noReactMessage;
   }
   return errorMessage;
+}
+
+function countAts(string) {
+  let count = 0;
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === "@") count++;
+  }
+  return count;
 }
