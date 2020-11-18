@@ -15,7 +15,7 @@ client.login(process.env.TOKEN);
 client.on("message", async (message) => {
   if (message.mentions.users.size < countAts(message.content)) {
     messages.set(message.author.id, message);
-  } else if (message.content.toLowerCase().includes("!clock in <@")) {
+  } else if (message.content.toLowerCase().includes("!!clock in <@")) {
     let userID = message.mentions.users.keys().next().value;
     let messageToSend = await findReactorsByUserID(userID);
     message.channel.send(messageToSend);
@@ -48,8 +48,8 @@ async function pingReactors(message) {
     let users = await reaction.users.fetch();
     users.forEach((value, key) => usersReacted.add(key));
   }
-
-  let botMessage = "> " + message.content.replace("@","") + "\n";
+  console.log("message clean content",message.cleanContent)
+  let botMessage = "> " + message.cleanContent + "\n" + "So which one of you is throwing today :noobalert:" + "\n";
   usersReacted.forEach((user) => {
     botMessage += ` <@${user}>`;
   });
