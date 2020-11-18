@@ -49,7 +49,7 @@ async function pingReactors(message) {
     users.forEach((value, key) => usersReacted.add(key));
   }
 
-  let botMessage = "> " + message.content + "\n";
+  let botMessage = "> " + message.content.replace("@","") + "\n";
   usersReacted.forEach((user) => {
     botMessage += ` <@${user}>`;
   });
