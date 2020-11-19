@@ -48,7 +48,7 @@ async function pingReactors(message) {
     let users = await reaction.users.fetch();
     users.forEach((value, key) => usersReacted.add(key));
   }
-  let botMessage = "> " + message.cleanContent + "\n" + "So which one of you is throwing today :noobalert:" + "\n";
+  let botMessage = "> " + message.cleanContent + "\n" + "So which one of you is throwing today" + "\n";
   usersReacted.forEach((user) => {
     botMessage += ` <@${user}>`;
   });
