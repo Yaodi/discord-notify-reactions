@@ -35,7 +35,7 @@ client.on("message", async (message) => {
   }
   // Handle clock in command that includes message link
   else if (
-    message.content.toLowerCase().includes("!clock in https://discordapp.com/")
+    message.content.toLowerCase().includes("!clock in https://discord")
   ) {
     let messageID = message.content.split("/").pop();
     let fetchedMessage = await message.channel.messages.fetch(messageID, false);
