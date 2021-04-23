@@ -74,7 +74,7 @@ async function pingReactors(message) {
     "> " +
     message.cleanContent +
     "\n" +
-    "So which one of you is throwing today" +
+    "This better be a league clock in you shitter" +
     "\n";
   usersReacted.forEach((user) => {
     botMessage += ` <@${user}>`;
