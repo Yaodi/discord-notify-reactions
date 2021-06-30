@@ -8,6 +8,19 @@ const noReactMessage = { content: "You have no friends" };
 // This will be a map where the key is a user (ID) and the value is an array containing their most recent role mention messages
 let messages = new Map();
 
+
+const memeMessages = [
+  "Help me I'm trapped in a discord bot my name is Alex Sw-",
+  "Thank god josh isn't in this clock-in",
+  "If Mandal is in thie clock-in I'm throwing on jah",
+  "Just go outside you nerds",
+  "Need 1 for valorant PLEASE",
+  "Someone tell MEE6 I told him to go fuck himself",
+  "ayup, this clock-in is going in the cringe compilation",
+];
+
+const getMemeMessage = () => memeMessages[Math.floor(Math.random() * memeMessages.length)];
+
 client.once("ready", () => {
   console.log("Notify reactions is up and running");
 });
@@ -74,7 +87,7 @@ async function pingReactors(message) {
     "> " +
     message.cleanContent +
     "\n" +
-    "Help me I'm trapped in a discord bot my name is Alex Sw-" +
+    getMemeMessage() +
     "\n";
   usersReacted.forEach((user) => {
     botMessage += ` <@${user}>`;
